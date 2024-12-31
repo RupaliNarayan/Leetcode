@@ -1,0 +1,11 @@
+#https://leetcode.com/problems/contains-duplicate-ii/description/
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+       d={}
+       for (i,value) in enumerate(nums):
+        if value in d and i-d[value]<=k:
+            return True
+        else:
+            d[value]=i
+       return False
+        
