@@ -1,0 +1,17 @@
+#https://leetcode.com/problems/minimum-element-after-replacement-with-digit-sum/description/
+class Solution:
+    def minElement(self, nums: List[int]) -> int:
+        def sum(n):
+            b=0
+            while n>0:
+                a=n%10
+                b=b+a
+                n=n//10
+        
+            return b
+        for i in range(len(nums)):
+            nums[i]=sum(nums[i])
+       
+   
+        return min(nums)
+        
