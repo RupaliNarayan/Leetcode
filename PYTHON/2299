@@ -1,0 +1,27 @@
+#https://leetcode.com/problems/strong-password-checker-ii/description/
+class Solution:
+    def strongPasswordCheckerII(self, password: str) -> bool:
+        special="!@#$%^&*()-+"
+        p,q,s,t=False,False,False,False
+        if len(password)<8:
+            return False
+        for i in range(len(password)):
+            char=password[i]
+            if i>0 and password[i]==password[i-1]:
+                return False
+            
+            if char.islower():
+                s=True
+            
+            elif char.isupper():
+                p=True
+
+            elif char.isdigit():
+                q=True
+            
+            elif char in special:
+                t=True
+            
+       
+
+        return p and q and s and t
