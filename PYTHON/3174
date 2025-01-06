@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/clear-digits/description/
+class Solution:
+    def clearDigits(self, s: str) -> str:
+        n=len(s)
+        s=list(s)
+        i=0
+        while i<n:
+            if '0' <= s[i] <= '9':
+                s[i]="!"
+                for j in range(i-1,-1,-1):
+                    if not ('0' <= s[j] <= '9')  and s[j]!='!':
+                        s[j]="!"
+                        break
+            
+            i=i+1
+
+        re=''.join([c for c in s if c!='!'])
+        return re
