@@ -1,0 +1,21 @@
+#https://leetcode.com/problems/substring-matching-pattern/description/
+class Solution:
+    def hasMatch(self, s: str, p: str) -> bool:
+        flag=False
+        if len(s)==1 and len(p)==1:
+            return True
+
+        for i in range(len(s)-1):
+            for j in range(1,len(s)+1):
+                a=s[i:j]
+               
+                b=p.replace("*",a)
+                print(b)
+                if b in s:
+                    flag=True
+                    break
+               
+        if flag==True:
+            return True
+        else:
+            return False
