@@ -1,0 +1,14 @@
+#https://leetcode.com/problems/split-the-array/description/
+class Solution:
+    def isPossibleToSplit(self, nums: List[int]) -> bool:
+       d={}
+
+       for i in nums:
+          d[i]=1+d.get(i,0)
+       
+        
+       for val in d.values():
+         if val>2:
+             return False
+         
+       return True
