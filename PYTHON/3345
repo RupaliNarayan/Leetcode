@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/smallest-divisible-digit-product-i/description/
+class Solution:
+    def smallestNumber(self, n: int, t: int) -> int:
+        
+        def pro(num):
+            s=1
+            while(num>0):
+                d=num%10
+                s=s*d
+                num=num//10
+            return s
+
+        num=n
+        while(num>=n):
+            product=pro(num)
+            if product%t==0:
+                return num
+            num=num+1
