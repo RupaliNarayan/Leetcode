@@ -1,0 +1,12 @@
+#https://leetcode.com/problems/smallest-number-with-all-set-bits/
+class Solution:
+    def smallestNumber(self, n: int) -> int:
+        num=n
+        print(bin(num))
+        while (num>=n):
+              a=bin(num)
+              b=a[2:]
+              if '0' in str(b):
+                 num=num+1
+              else:
+                 return num
