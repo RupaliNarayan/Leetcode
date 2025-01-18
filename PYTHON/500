@@ -1,0 +1,36 @@
+#https://leetcode.com/problems/keyboard-row/description/
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+     
+        def row(le):
+            row_1="qwertyuiopQWERTYUIOP"
+            row_2="asdfghjklASDFGHJKL"
+            row_3="zxcvbnmZXCVBNM"
+            if le in row_1:
+                return 1
+            elif le in row_2:
+                return 2
+            elif le in row_3:
+                return 3
+        
+        re=[]
+        for i in words:
+            flag=True
+            
+            first=row(i[0])
+           
+            for j in range(1,len(i)):
+                
+                number=row(i[j])
+                if number==first:
+                    pass
+                    
+                else:
+                    flag=False
+                    break
+                   
+                   
+            if flag==True:
+             re.append(i)
+            
+        return re
