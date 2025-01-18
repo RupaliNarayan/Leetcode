@@ -1,0 +1,31 @@
+#https://leetcode.com/problems/valid-anagram/?envType=problem-list-v2&envId=string
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        ds={}
+        dt={}
+        for i in s:
+            if i in ds:
+                ds[i]=ds[i]+1
+            else:
+                ds[i]=1
+        print(ds)
+        for i in t:
+            if i in dt:
+                dt[i]=dt[i]+1
+            else:
+                dt[i]=1
+        print(dt)
+        if len(ds)!=len(dt):
+           return False
+
+        for i in ds:
+            a=ds[i]
+            if i in dt:
+                print(dt[i],a) 
+                if dt[i]==a:
+                  pass
+                else:
+                  return False
+            else:
+               return False
+        return True
