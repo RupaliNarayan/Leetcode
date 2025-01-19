@@ -1,0 +1,12 @@
+#https://leetcode.com/problems/excel-sheet-column-number/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def titleToNumber(self, columnTitle: str) -> int:
+        s=0
+        n=len(columnTitle)-1
+        for i in columnTitle:
+           
+            d=(ord(i)-ord('A'))+1
+            s=s+d*(26**n)
+            n=n-1
+            
+        return s
