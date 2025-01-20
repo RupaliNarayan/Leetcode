@@ -1,0 +1,7 @@
+#https://leetcode.com/problems/percentage-of-letter-in-string/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def percentageLetter(self, s: str, letter: str) -> int:
+        
+            c=s.count(letter)
+            p=floor((c/(len(s)))*100)
+            return p
