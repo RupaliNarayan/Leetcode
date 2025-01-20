@@ -1,0 +1,27 @@
+#https://leetcode.com/problems/word-pattern/description/
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        #checking the lengths
+        a=s.split()
+        
+        if len(pattern)!=len(a):
+            return False
+        
+        #creating dictionary to map letters and words
+        dp={}
+        ds={}
+        for i in range(len(a)):
+            if pattern[i] not in dp:
+                dp[pattern[i]]=a[i]
+            else:
+                if dp[pattern[i]]!=a[i]:
+                    return False
+        
+        for i in range(len(a)):    
+            if a[i] not in ds:
+                ds[a[i]]=pattern[i]
+            else:
+                if ds[a[i]]!=pattern[i]:
+                    return False
+
+        return True 
