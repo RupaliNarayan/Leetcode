@@ -1,0 +1,22 @@
+#https://leetcode.com/problems/isomorphic-strings/?source=submission-ac
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        ds={}
+        dt={}
+        for i in range(len(s)):
+            
+            if s[i] not in ds :
+                ds[s[i]]=t[i]
+            else:
+                if ds[s[i]]!=t[i]:
+                    return False 
+
+        for i in range(len(s)):   
+            if t[i] not in dt:
+                dt[t[i]]=s[i]
+            else:
+                if dt[t[i]]!=s[i]:
+                    return False
+          
+        return True
+                    
