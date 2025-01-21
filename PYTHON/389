@@ -1,0 +1,8 @@
+#https://leetcode.com/problems/find-the-difference/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+       for i in t:
+        if t.count(i)==s.count(i):
+            pass
+        else:
+            return i
