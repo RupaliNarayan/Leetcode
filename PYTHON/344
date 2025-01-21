@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/reverse-string/?envType=problem-list-v2&envId=string
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        st=0
+        e=len(s)-1
+        for i in range(len(s)):
+            if st<e:
+              
+                temp=s[st]
+                s[st]=s[e]
+                s[e]=temp
+              
+                st=st+1
+                e=e-1
+        return s
