@@ -1,0 +1,5 @@
+#https://leetcode.com/problems/number-of-segments-in-a-string/?envType=problem-list-v2&envId=string
+class Solution:
+    def countSegments(self, s: str) -> int:
+        l=s.split()
+        return len(l)
