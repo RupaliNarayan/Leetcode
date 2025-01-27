@@ -1,0 +1,17 @@
+#https://leetcode.com/problems/license-key-formatting/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def licenseKeyFormatting(self, s: str, k: int) -> str:
+         res=''
+         count=0
+         ans=''
+         for i in range(1,len(s)+1):
+            if s[-i]!='-':
+                ans=ans+s[-i].upper()
+                count=count+1
+                if count==k:
+                    ans=ans+'-'
+                    count=0
+         print(ans)
+         if (len(ans)>0) and (ans[len(ans)-1]=='-'):
+            ans=ans[:-1]
+         return ans[::-1]
