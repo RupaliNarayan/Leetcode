@@ -1,0 +1,11 @@
+#https://leetcode.com/problems/student-attendance-record-i/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def checkRecord(self, s: str) -> bool:
+        check = 1
+        absent = s.count("A")
+
+        if absent >= 2:
+            return False
+        if "LLL" in s:
+            return False
+        return True
