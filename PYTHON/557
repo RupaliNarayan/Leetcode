@@ -1,0 +1,14 @@
+#https://leetcode.com/problems/reverse-words-in-a-string-iii/description/?envType=problem-list-v2&envId=string
+class Solution:
+    def reverseWords(self, s: str) -> str:
+         c=''
+         l=[]
+         for i in range(len(s)):
+            if s[i]!=' ':
+                c=c+s[i]
+            else:
+                 c=c[::-1]
+                 l.append(c)
+                 c=''
+         l.append(c[::-1])
+         return ' '.join(l)
