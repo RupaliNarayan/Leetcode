@@ -1,0 +1,22 @@
+#https://leetcode.com/problems/most-common-word/?envType=problem-list-v2&envId=string
+class Solution:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+      count=0
+      ans=''
+      a=''
+      for i in paragraph:
+        if i.isalpha() or i==' ':
+            a=a+i
+        else:
+            a=a+" "
+      print(a)
+      l=a.lower().split(" ")
+      print(l)
+      for i in l:
+        if i not in banned: 
+            if i!='':
+             b=l.count(i)
+             if b>count:
+                count=b
+                ans=i
+      return ans
