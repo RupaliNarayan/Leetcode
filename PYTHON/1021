@@ -1,0 +1,14 @@
+https://leetcode.com/problems/remove-outermost-parentheses/?envType=problem-list-v2&envId=string
+ def removeOuterParentheses(self, s: str) -> str:
+        result = ''
+        stack = []
+        for char in s:
+            if char == '(':
+                if stack:
+                   result += '('
+                stack.append('(')
+            else:
+                stack.pop()
+                if stack:
+                    result += ')'
+        return result
