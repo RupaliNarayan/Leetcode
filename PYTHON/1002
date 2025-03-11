@@ -1,0 +1,18 @@
+https://leetcode.com/problems/find-common-characters/?envType=problem-list-v2&envId=string
+class Solution:
+    def commonChars(self, words: List[str]) -> List[str]:
+        
+        common_char=Counter(words[0])
+
+        for word in words:
+            current_char=Counter(word)
+            print(current_char)
+            for letter in common_char.keys():
+               
+                 common_char[letter]=min(current_char[letter],common_char[letter])
+
+        res=[]
+        for letter,count in common_char.items():
+            for i in range(count):
+                res.append(letter)
+        return res
