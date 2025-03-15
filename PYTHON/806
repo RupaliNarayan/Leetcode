@@ -1,0 +1,26 @@
+https://leetcode.com/problems/number-of-lines-to-write-string/?envType=problem-list-v2&envId=string
+class Solution:
+    def numberOfLines(self, widths: List[int], s: str) -> List[int]:
+        sum=0
+        a=[]
+        r=''
+        result=[]
+        k=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x','y','z']
+        d=dict(zip(k,widths))
+     
+        for i in range((len(s))):
+            sum=sum+d[s[i]]
+            if sum<=100:
+                r=r+s[i]
+            else:
+               
+                a.append(r)
+                r=''
+                sum=0
+                r=r+s[i]
+                sum=sum+d[s[i]]
+               
+        a.append(r)
+        result.append(len(a))
+        result.append(sum)
+        return result
